@@ -1,0 +1,75 @@
+/* General Reset */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling for menu and logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* Dropdown menu on the left */
+nav {
+    margin-left: 10px;
+}
+
+nav .dropdown {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .dropdown-content a {
+    padding: 8px 12px;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Logo aligned to the right */
+.logo img {
+    height: 100px;
+    margin-right: 10px;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+main img {
+    max-width: 300px;
+    margin-top: 20px;
+}
