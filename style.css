@@ -79,9 +79,9 @@ nav {
 
 /* Logo on the Right */
 .logo img {
-  height: 50px;
+  height: 30px;
   display: block;
-  margin-left: auto;
+  margin-left: auto; 
 }
 
 /* Section Styles */
