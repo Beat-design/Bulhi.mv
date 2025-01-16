@@ -14,6 +14,126 @@
 
     <!-- Product Image -->
     <div class="product-image">
+      <img id="product-img" src="glow_hook_1.jpg" alt="Glow Jigging Assist Hook - Size 7">
+    </div>
+
+    <!-- Size Selection -->
+    <label for="size">Select Size:</label>
+    <select id="size" name="size">
+      <option value="1">Size 1</option>
+      <option value="2">Size 2</option>
+      <option value="3">Size 3</option>
+      <option value="4">Size 4</option>
+      <option value="5">Size 5</option>
+      <option value="6">Size 6</option>
+      <option value="7" selected>Size 7</option>
+    </select>
+
+    <!-- Stock Availability -->
+    <p id="stock-status">
+      <strong>Available:</strong> <span id="stock-count">3</span> in stock
+    </p>
+
+    <!-- Quantity Selection -->
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" value="1" min="1" max="3">
+
+    <!-- Add to Cart Button -->
+    <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <script>
+    const stockCountBySize = {
+      1: 10,
+      2: 8,
+      3: 12,
+      4: 15,
+      5: 5,
+      6: 7,
+      7: 3 // Stock for Size 7
+    };
+
+    const imagesBySize = {
+      1: '', // No specific image
+      2: '', // No specific image
+      3: '', // No specific image
+      4: '', // No specific image
+      5: '', // No specific image
+      6: '', // No specific image
+      7: 'glow_hook_1.jpg' // Image for Size 7
+    };
+
+    const sizeSelect = document.getElementById('size');
+    const stockStatus = document.getElementById('stock-status');
+    const stockDisplay = document.getElementById('stock-count');
+    const quantityInput = document.getElementById('quantity');
+    const addToCartButton = document.getElementById('add-to-cart');
+    const productImg = document.getElementById('product-img');
+
+    // Update stock and image based on selected size
+    function updateProductDetails() {
+      const selectedSize = sizeSelect.value;
+      const stockCount = stockCountBySize[selectedSize];
+      const imageSrc = imagesBySize[selectedSize];
+
+      // Update stock
+      if (stockCount === 0) {
+        stockStatus.innerHTML = '<strong>Sold Out</strong>';
+        quantityInput.disabled = true;
+        addToCartButton.disabled = true;
+      } else {
+        stockStatus.innerHTML = `<strong>Available:</strong> <span id="stock-count">${stockCount}</span> in stock`;
+        quantityInput.disabled = false;
+        addToCartButton.disabled = false;
+        quantityInput.max = stockCount;
+      }
+
+      // Update image if available
+      if (imageSrc) {
+        productImg.src = imageSrc;
+        productImg.alt = `Glow Jigging Assist Hook - Size ${selectedSize}`;
+        productImg.style.display = 'block';
+      } else {
+        productImg.style.display = 'none';
+      }
+    }
+
+    // Add to Cart Functionality
+    function addToCart() {
+      const selectedSize = sizeSelect.value;
+      const quantity = parseInt(quantityInput.value);
+      const stockCount = stockCountBySize[selectedSize];
+
+      if (quantity > stockCount) {
+        alert('Not enough stock available for the selected size.');
+      } else {
+        alert(`Added ${quantity} of Size ${selectedSize} to cart!`);
+      }
+    }
+
+    // Event Listener for Size Selection
+    sizeSelect.addEventListener('change', updateProductDetails);
+
+    // Initialize stock and image for the selected size
+    updateProductDetails();
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glow Jigging Assist Hook</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="product">
+    <h2>Glow Jigging Assist Hook</h2>
+    <p>Best for deep jigging</p>
+    <p>Price: <strong>$5 / 75 MVR</strong></p>
+
+    <!-- Product Image -->
+    <div class="product-image">
       <img id="product-img" src="size7-image.jpg" alt="Glow Jigging Assist Hook - Size 7">
     </div>
 
