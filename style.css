@@ -5,7 +5,66 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
+/* Navigation Bar Styling */
+nav {
+  background-color: #009688;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
+/* Dropdown Menu Styling */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #009688;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #00796b;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Logo Styling */
+.logo img {
+  height: 40px;
+  width: auto;
+}
 nav {
   background-color: #009688;
   padding: 10px 20px;
