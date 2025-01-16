@@ -16,12 +16,11 @@ header {
   padding: 10px 20px;
 }
 
-/* Adjusted Logo Size */
 .logo img {
-  height: 20px; /* Further reduced size to 20px */
+  max-height: 50px; /* Smaller logo size */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure proper scaling */
   display: block;
-  margin-left: auto;
-
 }
 
 .navbar {
@@ -121,11 +120,14 @@ footer a:hover {
 /* Product Section */
 .product {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product img {
-  max-width: 100%;
-  height: auto;
+  max-width: 200px; /* Limit product image width */
+  height: auto; /* Maintain aspect ratio */
   border-radius: 5px;
   margin: 10px 0;
 }
