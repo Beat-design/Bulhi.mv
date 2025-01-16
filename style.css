@@ -16,8 +16,12 @@ header {
   padding: 10px 20px;
 }
 
+/* Adjusted Logo Size */
 .logo img {
-  height: 20px; /* Logo size reduced */
+  height: 20px; /* Further reduced size to 20px */
+  display: block;
+  margin-left: auto;
+
 }
 
 .navbar {
